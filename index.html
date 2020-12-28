@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Typeahead MVP</title>
+  <meta name="description" content="An application for testing and demonstrating typeahead JS and bloodhound usage">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- CSS loads -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/typeahead.css?v=0.2.1">
+  <meta name="theme-color" content="#9BCBEB">
+</head>
+
+<body>
+  <main role="main" class="container">
+    <h1>Typeahead and Bloodhound Demo</h1>
+    <form class="form-minisearch">
+      <div id="searchbox" class="form-group has-feedback">
+        <label for="typeAHsearch">Look up some sample addresses below. Try "123" or "21" to get multiple sources. Try "123F" to only get static sources from altdata.js, or "1200" to only get AJAX sources.</label>
+        <input id="typeAHsearch" type="text" 
+        placeholder="Try 123F or 1200" class="form-control typeahead">
+    </div>
+    </form>
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">Results</h2>
+      </div>
+      <div class="card-body" id="addrDeets">
+        <span id="addressEm"></span>
+      </div>
+    </div>
+    <br/>
+    <p>Turn on a screen reader like NVDA and start typing. For some reason, the results from the AJAX lookup are read like "5 results are available". 
+      The results from the static source are read like "0 results are available" even if there are results to choose from.</p>
+  </main>
+  <!--JS Library loads. Important to use non-slim version of JQuery for Typeahead. Includes a local backup for JQuery. -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="js/vendor/typeahead.bundle.js"></script>
+  <!--Custom JS loads-->
+  <script src="js/altdata.js"></script><!--contains fake sample data for typeahead-->
+  <script src="js/main.js?v=0.2.1"></script><!--Main driver script for search support and basic results-->
+</body>
+
+</html>
